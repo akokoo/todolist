@@ -1,0 +1,108 @@
+.task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .task-container {
+        position: relative;
+    }
+    .task-check,
+    .task-title {
+        cursor: pointer;
+    }
+    .task-container {
+        &::before,
+        &::after {
+            display: inline-block;
+            float: left;
+            position: absolute;
+            text-align: right;
+            font-size: 2em;
+            pointer-events: none;
+        }
+        &::before {
+            content: '';
+            height: 1px;
+            width: 100%;
+            background-color: transparent;
+            top: 50%;
+            left: 0;
+        }
+        &::after {
+            content: '\270e';
+            color: transparent;
+        }
+    }
+    &.done .task-container {
+        &::before {
+            background-color: red;
+        }
+    }
+    &.done.animate .task-container {
+        &::before {
+            animation: draw_line 2s ease-in-out;
+        }
+        &::after {
+            animation: cross_out 2s ease-in-out;
+            top: -50%;
+        }
+    }
+    &.undone.animate .task-container {
+        &::before {
+            animation: erase_line 2s ease-in-out;
+        }
+        &::after {
+            transform: rotate(180deg);
+            animation: erase 2s ease-in-out;
+            top: -35%;
+        }
+    }
+}
+@keyframes cross_out {
+    0%,
+    100% {
+        color: red;
+    }
+    0% {
+        left: -.8em;
+    }
+    100% {
+        left: calc(100% - .8em);
+    }
+}
+@keyframes erase {
+    0%,
+    100% {
+        color: red;
+    }
+    0% {
+        left: calc(100% - .8em);
+    }
+    100% {
+        left: -.8em;
+    }
+}
+@keyframes draw_line {
+    0%,
+    100% {
+        background-color: red;
+    }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes erase_line {
+    0%,
+    100% {
+        background-color: red;
+    }
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}

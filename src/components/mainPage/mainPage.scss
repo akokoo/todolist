@@ -1,0 +1,28 @@
+.todo-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  position: relative;
+}
+.todo-frame {
+  border: #222427 solid 8px;
+  border-radius: 15px;
+  overflow: hidden;
+  @media(min-width: 600px) {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+.frame-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.logout-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,52 @@
+{
+  "name": "todo-list-2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.10.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "helmet": "^3.23.1",
+    "jwks-rsa": "^1.8.1",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.5.1",
+    "pg-promise": "^10.8.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "redux": "^4.0.5"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel app server:dev",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "app": "react-scripts start",
+    "server:dev": "nodemon server.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
